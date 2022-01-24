@@ -1,0 +1,34 @@
+model_name: Unet
+model_config:
+    shape: 128
+loss_function: sparse_categorical_crossentropy
+metrics:
+    - None
+augmentations:
+    rescale: 255
+    rotation_range: 40
+    width_shift_range: 0.2
+    height_shift_range: 0.2
+    shear_range: 0.2
+    zoom_range: 0.2
+    horizontal_flip: True
+    vertical_flip: True
+    fill_mode: nearest
+    brightness_range:
+      - 0.8
+      - 1
+optimizer: Adam
+batch_size: 14
+target_size: 128
+val_split: 0.1
+test_split: 0.1
+train_patience: 15
+epochs: 2
+monitor_value: val_MyMeanIOU
+
+train_path: C:/Users/cypri/OneDrive/Pulpit/Projekt/EndoProj/data/hk_train.csv
+val_path: C:/Users/cypri/OneDrive/Pulpit/Projekt/EndoProj/data/hk_val.csv
+ers_test_path: C:/Users/cypri/OneDrive/Pulpit/Projekt/EndoProj/data/ers_test.csv
+hyperkvasir_test_path: C:/Users/cypri/OneDrive/Pulpit/Projekt/EndoProj/data/hk_test.csv
+model_path: C:/Users/cypri/OneDrive/Pulpit/Projekt/models
+
